@@ -32,6 +32,8 @@
         android:id="@+id/btnMainSiguiente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="@string/siguiente_formulario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
