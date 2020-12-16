@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Aprendiendo_android_S4_form</string>
+    <string name="app_name">MyForm</string>
+    <string name="ingrese_su_nombre">Ingrese su nombre</string>
+    <string name="nombre">Nombre</string>
+    <string name="siguiente_formulario">Siguiente formulario</string>
+    <string name="saludo">Saludo</string>
+    <string name="despedida">Despedida</string>
+    <string name="mostrar_mensaje">Mostrar mensaje</string>
+    <string name="compartir_mensaje">Compartir mensaje</string>
 </resources>
