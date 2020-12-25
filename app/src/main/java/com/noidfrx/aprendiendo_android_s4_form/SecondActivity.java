@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +15,9 @@ public class SecondActivity extends AppCompatActivity {
     private Button btnSecondSiguiente;
     private SeekBar seekBarEdad;
     private TextView tvEdad;
+    private int saludoSeleccionado = 0;
+    private RadioButton rbSaludo;
+    private  RadioButton rbDespedida;
 
     private String nombre;
     private int edad = 18;
@@ -32,6 +36,8 @@ public class SecondActivity extends AppCompatActivity {
         btnSecondSiguiente = findViewById(R.id.btnSecondSiguiente);
         seekBarEdad = findViewById(R.id.seekBarEdad);
         tvEdad = findViewById(R.id.tvEdad);
+        rbSaludo=findViewById(R.id.rbSaludo);
+        rbDespedida=findViewById(R.id.rbDespedida);
         tvEdad.setText(edad+"");
 
         Bundle bundle = getIntent().getExtras();
@@ -76,6 +82,17 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent( SecondActivity.this, ThirdActivity.class);
+
+                if(rbSaludo.isChecked()){
+                    saludoSeleccionado = OPCION_SALUDO;
+                } else if(rbDespedida.isChecked()){
+                    saludoSeleccionado = OPCION_DESPEDIDA;
+                }else{
+                    Toast.makeText(SecondActivity.this, "Error salida saludo: "+saludoSeleccionado, Toast.LENGTH_SHORT).show();
+                }
+                i.putExtra("nombre", nombre);
+                i.putExtra("edad", edad);
+                i.putExtra("saludoSeleccionado",saludoSeleccionado);
                 startActivity(i);
             }
         });
